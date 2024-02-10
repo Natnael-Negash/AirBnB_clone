@@ -1,0 +1,1 @@
+This project is a simple clone of the AirBnB website, focusing on the data management part. It consists of a command-line interface that allows you to create, update, delete and retrieve data from a JSON file.
