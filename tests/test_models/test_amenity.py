@@ -1,10 +1,11 @@
 #!/usr/bin/python3
-"""Defines unittests for models/amenity.py.
 
-Unittest classes:
-    TestAmenity_instantiation
-    TestAmenity_save
-    TestAmenity_to_dict
+"""DEFINES UNITTESTS FOR MODELS/AMENITY.PY.
+
+UNITTEST CLASSES:
+    TESTAMENITY_INSTANTIATION
+    TESTAMENITY_SAVE
+    TESTAMENITY_TO_DICT
 """
 import os
 import models
@@ -15,9 +16,11 @@ from models.amenity import Amenity
 
 
 class TestAmenity_instantiation(unittest.TestCase):
-    """Unittests for testing instantiation of the Amenity class."""
+    
+    """UNITTESTS FOR TESTING INSTANTIATION OF THE AMENITY CLASS."""
 
     def test_no_args_instantiates(self):
+
         self.assertEqual(Amenity, type(Amenity()))
 
     def test_new_instance_stored_in_objects(self):
@@ -37,6 +40,7 @@ class TestAmenity_instantiation(unittest.TestCase):
         self.assertEqual(str, type(Amenity.name))
         self.assertIn("name", dir(Amenity()))
         self.assertNotIn("name", am.__dict__)
+
 
     def test_two_amenities_unique_ids(self):
         am1 = Amenity()
@@ -72,7 +76,10 @@ class TestAmenity_instantiation(unittest.TestCase):
         self.assertNotIn(None, am.__dict__.values())
 
     def test_instantiation_with_kwargs(self):
-        """instantiation with kwargs test method"""
+
+
+        """INSTANTIATION WITH KWARGS TEST METHOD"""
+
         dt = datetime.today()
         dt_iso = dt.isoformat()
         am = Amenity(id="345", created_at=dt_iso, updated_at=dt_iso)
@@ -81,12 +88,13 @@ class TestAmenity_instantiation(unittest.TestCase):
         self.assertEqual(am.updated_at, dt)
 
     def test_instantiation_with_None_kwargs(self):
+
         with self.assertRaises(TypeError):
             Amenity(id=None, created_at=None, updated_at=None)
 
 
 class TestAmenity_save(unittest.TestCase):
-    """Unittests for testing save method of the Amenity class."""
+    """UNITTESTS FOR TESTING SAVE METHOD OF THE AMENITY CLASS."""
 
     @classmethod
     def setUp(self):

@@ -1,10 +1,12 @@
 #!/usr/bin/python3
-"""Defines unittests for models/base_model.py.
 
-Unittest classes:
-    TestBaseModel_instantiation
-    TestBaseModel_save
-    TestBaseModel_to_dict
+
+"""DEFINES UNITTESTS FOR MODELS/BASE_MODEL.PY.
+
+UNITTEST CLASSES:
+    TESTBASEMODEL_INSTANTIATION
+    TESTBASEMODEL_SAVE
+    TESTBASEMODEL_TO_DICT
 """
 import os
 import models
@@ -15,7 +17,8 @@ from models.base_model import BaseModel
 
 
 class TestBaseModel_instantiation(unittest.TestCase):
-    """Unittests for testing instantiation of the BaseModel class."""
+
+    """UNITTESTS FOR TESTING INSTANTIATION OF THE BASEMODEL CLASS."""
 
     def test_no_args_instantiates(self):
         self.assertEqual(BaseModel, type(BaseModel()))
@@ -87,7 +90,8 @@ class TestBaseModel_instantiation(unittest.TestCase):
 
 
 class TestBaseModel_save(unittest.TestCase):
-    """Unittests for testing save method of the BaseModel class."""
+    
+    """UNITTESTS FOR TESTING SAVE METHOD OF THE BASEMODEL CLASS."""
 
     @classmethod
     def setUp(self):

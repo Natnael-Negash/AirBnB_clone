@@ -1,16 +1,19 @@
 #!/usr/bin/python3
-"""Defines unittests for console.py.
 
-Unittest classes:
-    TestHBNBCommand_prompting
-    TestHBNBCommand_help
-    TestHBNBCommand_exit
-    TestHBNBCommand_create
-    TestHBNBCommand_show
-    TestHBNBCommand_all
-    TestHBNBCommand_destroy
-    TestHBNBCommand_update
+
+"""DEFINES UNITTESTS FOR CONSOLE.PY.
+
+UNITTEST CLASSES:
+    TESTHBNBCOMMAND_PROMPTING
+    TESTHBNBCOMMAND_HELP
+    TESTHBNBCOMMAND_EXIT
+    TESTHBNBCOMMAND_CREATE
+    TESTHBNBCOMMAND_SHOW
+    TESTHBNBCOMMAND_ALL
+    TESTHBNBCOMMAND_DESTROY
+    TESTHBNBCOMMAND_UPDATE
 """
+
 import os
 import sys
 import unittest
@@ -22,7 +25,8 @@ from unittest.mock import patch
 
 
 class TestHBNBCommand_prompting(unittest.TestCase):
-    """Unittests for testing prompting of the HBNB command interpreter."""
+
+    """UNITTESTS FOR TESTING PROMPTING OF THE HBNB COMMAND INTERPRETER."""
 
     def test_prompt_string(self):
         self.assertEqual("(hbnb) ", HBNBCommand.prompt)
@@ -34,7 +38,8 @@ class TestHBNBCommand_prompting(unittest.TestCase):
 
 
 class TestHBNBCommand_help(unittest.TestCase):
-    """Unittests for testing help messages of the HBNB command interpreter."""
+
+    """UNITTESTS FOR TESTING HELP MESSAGES OF THE HBNB COMMAND INTERPRETER."""
 
     def test_help_quit(self):
         h = "Quit command to exit the program."
@@ -131,7 +136,7 @@ class TestHBNBCommand_create(unittest.TestCase):
     @classmethod
     def tearDown(self):
         try:
-[O            os.remove("file.json")
+            os.remove("file.json")
         except IOError:
             pass
         try:
