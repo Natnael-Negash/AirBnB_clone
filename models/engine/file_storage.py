@@ -3,19 +3,32 @@
 and deserializes JSON file to instances."""
 
 import json
+from models.base_model import BaseModel
+from models.user import User
+from models.state import State
+from models.city import City
+from models.place import Place
+from models.amenity import Amenity
+from models.review import Review
 
 
 class FileStorage:
-    """A class used to serialize and deserialize JSON file to instances"""
+    """Represent an abstracted storage engine.
+
+    Attributes:
+        __file_path (str): The name of the file to save objects to.
+        __objects (dict): A dictionary of instantiated objects.
+    """
     __file_path = "file.json"
     __objects = {}
 
     def all(self):
         """Returns the dictionary __objects"""
-        return type(self).__objects
+        return FileStorage.__objects
+
     
     def new(self, obj):
-        """Sets in __objects the obj with key <obj class name>.id"""
+        """Set in __objects obj with key <obj_class_name>.id"""
         type(self).__objects[obj.__class__.__name__ + '.' + str(obj.id)] = obj
 
     def save(self):
@@ -47,9 +60,7 @@ class FileStorage:
         return classes
 
     def reload(self):
-        """deserializes the JSON file to __objects(Only if the JSON file
-        (__file_path)exists; otherwise, does nothing. if the file doesn't exist
-        no exception is raised)"""
+        """Deserialize the JSON file __file_path to __objects, if it exists."""
         try:
             with open(type(self).__file_path, mode='r', encoding="UTF-8") as f:
                 for line in f:
