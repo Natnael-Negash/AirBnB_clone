@@ -131,7 +131,7 @@ class TestHBNBCommand_create(unittest.TestCase):
     @classmethod
     def tearDown(self):
         try:
-            os.remove("file.json")
+[O            os.remove("file.json")
         except IOError:
             pass
         try:
@@ -1568,3 +1568,4 @@ class TestHBNBCommand_count(unittest.TestCase):
 
 if __name__ == "__main__":
     unittest.main()
+
