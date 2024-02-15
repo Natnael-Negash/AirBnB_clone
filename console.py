@@ -65,9 +65,9 @@ class HBNBCommand(cmd.Cmd):
 
         pass
 
-   """ def default(self, arg):
+    def default(self, arg):
 
-        ""DEFAULT BEHAVIOR FOR CMD MODULE WHEN INPUT IS INVALID""
+        """DEFAULT BEHAVIOR FOR CMD MODULE WHEN INPUT IS INVALID"""
 
         argdict = {
             "all": self.do_all,
@@ -87,7 +87,7 @@ class HBNBCommand(cmd.Cmd):
                     call = "{} {}".format(argl[0], command[1])
                     return argdict[command[0]](call)
         print("*** Unknown syntax: {}".format(arg))
-        return False"""
+        return False
 
     def do_quit(self, arg):
 
@@ -101,6 +101,7 @@ class HBNBCommand(cmd.Cmd):
 
         print()
         return True
+    
     def help_quit(self):
         print("Quit command to exit the program")
 
@@ -110,10 +111,10 @@ class HBNBCommand(cmd.Cmd):
     def help_help(self):
         print("Display help for commands")
 
- """   def do_create(self, arg):
-        ""USAGE: CREATE <CLASS>
+    def do_create(self, arg):
+        """"USAGE: CREATE <CLASS>
         CREATE A NEW CLASS INSTANCE AND PRINT ITS ID.
-        ""
+        """
         argl = parse(arg)
 
         if len(argl) == 0:
@@ -129,9 +130,9 @@ class HBNBCommand(cmd.Cmd):
 
     def do_show(self, arg):
 
-        ""USAGE: SHOW <CLASS> <ID> OR <CLASS>.SHOW(<ID>)
+        """USAGE: SHOW <CLASS> <ID> OR <CLASS>.SHOW(<ID>)
         DISPLAY THE STRING REPRESENTATION OF A CLASS INSTANCE OF A GIVEN ID.
-        ""
+        """""
         argl = parse(arg)
         objdict = storage.all()
 
@@ -157,8 +158,8 @@ class HBNBCommand(cmd.Cmd):
 
     def do_destroy(self, arg):
 
-        ""USAGE: DESTROY <CLASS> <ID> OR <CLASS>.DESTROY(<ID>)
-        DELETE A CLASS INSTANCE OF A GIVEN ID.""
+        """USAGE: DESTROY <CLASS> <ID> OR <CLASS>.DESTROY(<ID>)
+        DELETE A CLASS INSTANCE OF A GIVEN ID."""
 
         argl = parse(arg)
         objdict = storage.all()
@@ -183,9 +184,9 @@ class HBNBCommand(cmd.Cmd):
 
     def do_all(self, arg):
 
-        ""USAGE: ALL OR ALL <CLASS> OR <CLASS>.ALL()
+        """USAGE: ALL OR ALL <CLASS> OR <CLASS>.ALL()
         DISPLAY STRING REPRESENTATIONS OF ALL INSTANCES OF A GIVEN CLASS.
-        IF NO CLASS IS SPECIFIED, DISPLAYS ALL INSTANTIATED OBJECTS.""
+        IF NO CLASS IS SPECIFIED, DISPLAYS ALL INSTANTIATED OBJECTS."""
 
         argl = parse(arg)
 
@@ -204,8 +205,8 @@ class HBNBCommand(cmd.Cmd):
 
     def do_count(self, arg):
 
-        ""USAGE: COUNT <CLASS> OR <CLASS>.COUNT()
-        RETRIEVE THE NUMBER OF INSTANCES OF A GIVEN CLASS.""
+        """USAGE: COUNT <CLASS> OR <CLASS>.COUNT()
+        RETRIEVE THE NUMBER OF INSTANCES OF A GIVEN CLASS."""
         
         argl = parse(arg)
         count = 0
@@ -216,11 +217,11 @@ class HBNBCommand(cmd.Cmd):
 
     def do_update(self, arg):
 
-        ""USAGE: UPDATE <CLASS> <ID> <ATTRIBUTE_NAME> <ATTRIBUTE_VALUE> OR
+        """USAGE: UPDATE <CLASS> <ID> <ATTRIBUTE_NAME> <ATTRIBUTE_VALUE> OR
        <CLASS>.UPDATE(<ID>, <ATTRIBUTE_NAME>, <ATTRIBUTE_VALUE>) OR
        <CLASS>.UPDATE(<ID>, <DICTIONARY>)
         UPDATE A CLASS INSTANCE OF A GIVEN ID BY ADDING OR UPDATING
-        A GIVEN ATTRIBUTE KEY/VALUE PAIR OR DICTIONARY.""
+        A GIVEN ATTRIBUTE KEY/VALUE PAIR OR DICTIONARY."""
         
         argl = parse(arg)
         objdict = storage.all()
@@ -276,7 +277,7 @@ class HBNBCommand(cmd.Cmd):
                 else:
                     obj.__dict__[l] = v
         storage.save()
-"""
+
 
 if __name__ == "__main__":
     HBNBCommand().cmdloop()
