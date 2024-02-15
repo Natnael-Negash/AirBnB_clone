@@ -47,7 +47,7 @@ class HBNBCommand(cmd.Cmd):
         PROMPT (STR): THE COMMAND PROMPT.
     """
 
-    prompt = "(hbnb) "
+    prompt = '(hbnb) '
 
     __classes = {
         "BaseModel",
@@ -99,7 +99,7 @@ class HBNBCommand(cmd.Cmd):
 
         """EOF SIGNAL TO EXIT THE PROGRAM."""
 
-        print("")
+        print()
         return True
 
     def do_create(self, arg):
