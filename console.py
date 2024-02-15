@@ -65,9 +65,9 @@ class HBNBCommand(cmd.Cmd):
 
         pass
 
-    def default(self, arg):
+   """ def default(self, arg):
 
-        """DEFAULT BEHAVIOR FOR CMD MODULE WHEN INPUT IS INVALID"""
+        ""DEFAULT BEHAVIOR FOR CMD MODULE WHEN INPUT IS INVALID""
 
         argdict = {
             "all": self.do_all,
@@ -87,7 +87,7 @@ class HBNBCommand(cmd.Cmd):
                     call = "{} {}".format(argl[0], command[1])
                     return argdict[command[0]](call)
         print("*** Unknown syntax: {}".format(arg))
-        return False
+        return False"""
 
     def do_quit(self, arg):
 
